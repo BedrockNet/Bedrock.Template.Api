@@ -1,0 +1,18 @@
+﻿{
+  "bedrockConfig": {
+    "application": {
+      "name": "Template API",
+      "environment": "Production"
+    },
+    "security": {
+      "application": {
+        "claimCollection": {
+          "applications": [ "Template" ],
+          "isCacheEnabled": "true",
+          "cacheType": "Memory",
+          "cacheExpiry": "30"
+        }
+      }
+    }
+  }
+}

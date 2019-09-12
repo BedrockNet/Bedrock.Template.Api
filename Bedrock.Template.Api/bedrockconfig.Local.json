@@ -1,0 +1,43 @@
+﻿{
+  "bedrockConfig": {
+    "application": {
+      "name": "Template API",
+      "environment": "Local"
+    },
+    "data": {
+      "isLog": true,
+      "connectionStrings": {
+        "Bedrock.Template.Api.Infrastructure.ConnectionString.Template": "Server=.;Database=Template;Trusted_Connection=True;"
+      }
+    },
+    "log": {
+      "orm": {
+        "isLog": "false",
+        "isConsole": "false",
+        "isDebug": "true",
+        "isFiltered": "true",
+        "enableSensitiveDataLogging": "false"
+      }
+    },
+    "security": {
+      "application": {
+        "claimCollection": {
+          "applications": [ "Template" ],
+          "isCacheEnabled": "true",
+          "cacheType": "Memory",
+          "cacheExpiry": "30"
+        },
+        "AzureAdB2C": {
+          "ApplicationId": "",
+          "ClientId": "",
+          "ScopeRead": "Api.Read",
+          "ScopeWrite": "Api.Write",
+          "ScopeImpersonation": "user_impersonation"
+        },
+        "SwaggerAdB2C": {
+          "ClientId": ""
+        }
+      }
+    }
+  }
+}

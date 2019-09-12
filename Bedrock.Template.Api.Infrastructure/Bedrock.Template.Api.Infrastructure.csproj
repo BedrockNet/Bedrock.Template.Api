@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Bedrock.Shared.Ioc.Autofac" Version="1.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Bedrock.Template.Api.Core\Bedrock.Template.Api.Core.csproj" />
+	  <ProjectReference Include="..\Bedrock.Template.Api.Domain\Bedrock.Template.Api.Domain.csproj" />
+	  <ProjectReference Include="..\Bedrock.Template.Api.Service\Bedrock.Template.Api.Service.csproj" />
+	</ItemGroup>
+
+</Project>
