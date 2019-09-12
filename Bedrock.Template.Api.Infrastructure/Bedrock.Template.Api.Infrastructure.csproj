@@ -14,4 +14,8 @@
 	  <ProjectReference Include="..\Bedrock.Template.Api.Service\Bedrock.Template.Api.Service.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Mapping\AutoMapper\Profile\RockManagement\" />
+	</ItemGroup>
+
 </Project>
