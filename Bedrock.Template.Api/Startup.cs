@@ -248,7 +248,7 @@ namespace Bedrock.Template.Api
                     Description = "A sample application using Bedrock.Shared, Swagger, Swashbuckle, and API versioning.",
                     Contact = new Contact() { Name = "Bedrock Net", Email = "bedrocknetdeveloper@gmail.com" },
                     TermsOfService = "https://github.com/BedrockNet/Bedrock.Template.Api/blob/master/license.txt",
-                    License = new License() { Name = "Bedrock Technology", Url = "https://github.com/BedrockNet/Bedrock.Template.Api" }
+                    License = new License() { Name = "Bedrock", Url = "https://github.com/BedrockNet/Bedrock.Template.Api" }
                 };
             });
 
