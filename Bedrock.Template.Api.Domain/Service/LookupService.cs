@@ -21,6 +21,13 @@ namespace Bedrock.Template.Api.Domain.Service
         #endregion
 
         #region ILookupService Methods
+        public async Task<IEnumerable<RockType>> GetRockTypesAsync()
+        {
+            return await Context
+                            .RockTypes
+                            .AsNoTracking()
+                            .ToListAsync();
+        }
         #endregion
     }
 }

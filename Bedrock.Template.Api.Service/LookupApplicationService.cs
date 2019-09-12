@@ -8,6 +8,9 @@ using Bedrock.Template.Api.Service.Interface;
 
 using Bedrock.Shared.Configuration;
 using Bedrock.Shared.Extension;
+using Bedrock.Template.Api.Service.Contract.Lookup;
+using Bedrock.Template.Api.Core.Utility;
+using Bedrock.Template.Api.Core.Enumeration.StringHelper;
 
 namespace Bedrock.Template.Api.Service
 {
@@ -56,6 +59,12 @@ namespace Bedrock.Template.Api.Service
         public async Task ClearCacheAllAsync()
         {
             await Cache.InvalidateCacheAsync();
+        }
+
+        public async Task<IEnumerable<RockTypeContract>> GetRockTypesAsync()
+        {
+            var cacheKey = StringHelperTemplate.Current.Lookup(StringCacheKeyTemplate.RockTypes);
+            return await await Cache.GetAsync(cacheKey, CacheExpiry, async () => RockTypeContract.StaticMapToModelsFromDomainModels(await LookupService.GetRockTypesAsync()));
         }
         #endregion
     }

@@ -82,6 +82,16 @@ namespace Bedrock.Template.Api.Core.Utility
         {
             var returnValue = string.Empty;
             var keyPrefix = "Bedrock:Template:Api:";
+
+            switch (key)
+            {
+                case StringCacheKeyTemplate.RockTypes:
+                    {
+                        returnValue = $"{keyPrefix}RockTypes";
+                        break;
+                    }
+            }
+
             return returnValue;
         }
         #endregion

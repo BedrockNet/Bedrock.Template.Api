@@ -9,6 +9,7 @@ namespace Bedrock.Template.Api.Domain.Service.Interface
     public interface ILookupService : ISessionAware
     {
         #region Methods
+        Task<IEnumerable<RockType>> GetRockTypesAsync();
         #endregion
     }
 }

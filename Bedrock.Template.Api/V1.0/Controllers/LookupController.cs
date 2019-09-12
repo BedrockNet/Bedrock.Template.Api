@@ -82,6 +82,13 @@ namespace Bedrock.Template.Api.V1_0.Controllers
             await LookupService.ClearCacheAllAsync();
             return Ok();
         }
+
+        [HttpGet, Route("GetRockTypes")]
+        public async Task<IActionResult> GetRockTypes()
+        {
+            var returnValue = await LookupService.GetRockTypesAsync();
+            return Ok(returnValue);
+        }
         #endregion
     }
 }
