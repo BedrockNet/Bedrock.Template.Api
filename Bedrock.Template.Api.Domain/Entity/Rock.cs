@@ -1,14 +1,22 @@
 using System.ComponentModel.DataAnnotations;
+using Bedrock.Template.Api.Domain.Event.Rock;
 
 namespace Bedrock.Template.Api.Domain.Entity
 {
 	public partial class Rock
 	{
-		#region Properties
-		#endregion
+        #region Properties
+        #endregion
 
-		#region Private Methods
-		partial void Initialize() { }
+        #region Public Methods
+        public void DoSomethingToRaiseEvent()
+        {
+            Events.Add(new RockAddedEvent(this));
+        }
+        #endregion
+
+        #region Private Methods
+        partial void Initialize() { }
 
 		partial void ValidateInternal(ValidationContext validationContext) { }
 		#endregion

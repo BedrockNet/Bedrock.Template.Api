@@ -69,6 +69,41 @@ namespace Bedrock.Template.Api.Core.Utility
         private string Lookup(StringErrorTemplate key, params string[] args)
         {
             var returnValue = string.Empty;
+
+            switch (key)
+            {
+                case StringErrorTemplate.DataInvalidForOperation:
+                    {
+                        returnValue = "Data Invalid For Operation";
+                        break;
+                    }
+                case StringErrorTemplate.RockDoesNotExist:
+                    {
+                        returnValue = "Rock does not exist.";
+                        break;
+                    }
+                case StringErrorTemplate.SomethingIsWrong:
+                    {
+                        returnValue = "Something is wrong";
+                        break;
+                    }
+                case StringErrorTemplate.SomethingElseIsWrong:
+                    {
+                        returnValue = "Something else is wrong";
+                        break;
+                    }
+                case StringErrorTemplate.CannotHaveId:
+                    {
+                        returnValue = "Cannot have Id";
+                        break;
+                    }
+                case StringErrorTemplate.MustHaveId:
+                    {
+                        returnValue = "Must have Id";
+                        break;
+                    }
+            }
+
             return returnValue;
         }
 
