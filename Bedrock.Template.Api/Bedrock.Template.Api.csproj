@@ -14,11 +14,11 @@
   </ItemGroup>
 
 	<ItemGroup>
-    <PackageReference Include="Bedrock.Shared.Ioc.Autofac" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Model" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Service.Implementation" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Web.Api" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Web.Api.Swagger" Version="1.0.0" />
+    <PackageReference Include="Bedrock.Shared.Ioc.Autofac" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Model" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Service.Implementation" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Web.Api" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Web.Api.Swagger" Version="1.0.1" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.1.4" />

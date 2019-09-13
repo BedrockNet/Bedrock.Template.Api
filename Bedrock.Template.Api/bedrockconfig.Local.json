@@ -20,6 +20,7 @@
       }
     },
     "security": {
+      "isEnabled": false,
       "application": {
         "claimCollection": {
           "applications": [ "Template" ],

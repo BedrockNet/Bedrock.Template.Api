@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bedrock.Shared.Entity.Implementation" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Model" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Pagination" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Service.Implementation" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Web" Version="1.0.0" />
-    <PackageReference Include="Bedrock.Shared.Security.Api.Client" Version="1.0.0" />
+    <PackageReference Include="Bedrock.Shared.Entity.Implementation" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Model" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Pagination" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Service.Implementation" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Web" Version="1.0.1" />
+    <PackageReference Include="Bedrock.Shared.Security.Api.Client" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>

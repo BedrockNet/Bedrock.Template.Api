@@ -71,8 +71,6 @@ namespace Bedrock.Template.Api
 
         #region Protected Properties
         protected BedrockConfiguration BedrockConfiguration { get; set; }
-
-        protected bool IsAuthenticationEnabled => false;
         #endregion
 
         #region Public Properties
@@ -115,7 +113,7 @@ namespace Bedrock.Template.Api
 
             app.UseCors("CorsPolicy");
 
-            if (IsAuthenticationEnabled)
+            if (BedrockConfiguration.Security.IsEnabled)
             {
                 app.UseAuthentication();
                 app.UseMiddleware<SetUserMiddleware>(new PostAuthenticationMiddlewareOptions(new ClaimTypeAad()));
@@ -161,7 +159,7 @@ namespace Bedrock.Template.Api
             services
                 .AddMvc(config =>
                 {
-                    if (IsAuthenticationEnabled)
+                    if (BedrockConfiguration.Security.IsEnabled)
                         config.Filters.Add(new AuthorizeFilter("default"));
 
                 })
@@ -173,7 +171,7 @@ namespace Bedrock.Template.Api
 
         private void AddAuthentication(IServiceCollection services)
         {
-            if (!IsAuthenticationEnabled)
+            if (!BedrockConfiguration.Security.IsEnabled)
                 return;
 
             var claimType = new ClaimTypeAad();
@@ -268,7 +266,7 @@ namespace Bedrock.Template.Api
 
         private void AddSwaggerGenAuthentication(SwaggerGenOptions options)
         {
-            if (!IsAuthenticationEnabled)
+            if (!BedrockConfiguration.Security.IsEnabled)
                 return;
 
             var azureConfig = BedrockConfiguration.Security.Application.AzureAdB2C;
