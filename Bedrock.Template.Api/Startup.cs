@@ -171,10 +171,14 @@ namespace Bedrock.Template.Api
 
         private void AddAuthentication(IServiceCollection services)
         {
+            var claimType = new ClaimTypeAad();
+
+            services.AddSingleton<IClaimsTransformation, AzureAdScopeClaimTransformation>();
+            services.AddSingleton<IClaimType, ClaimTypeAad>(c => claimType);
+
             if (!BedrockConfiguration.Security.IsEnabled)
                 return;
 
-            var claimType = new ClaimTypeAad();
             var azureConfig = BedrockConfiguration.Security.Application.AzureAdB2C;
 
             services.AddAuthorization(o =>
@@ -200,9 +204,6 @@ namespace Bedrock.Template.Api
                 options.RequireHttpsMetadata = false;
                 options.SaveToken = true;
             });
-
-            services.AddSingleton<IClaimsTransformation, AzureAdScopeClaimTransformation>();
-            services.AddSingleton<IClaimType, ClaimTypeAad>(c => claimType);
         }
 
         private void AddApiVersioning(IServiceCollection services)

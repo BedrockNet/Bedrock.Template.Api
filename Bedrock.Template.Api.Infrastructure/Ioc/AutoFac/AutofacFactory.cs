@@ -44,7 +44,7 @@ namespace Bedrock.Template.Api.Infrastructure.Ioc.Autofac
                 iocConfiguration,
                 dependentType
             )
-            .RegisterSecurity(iocConfiguration, bedrockConfiguration);
+            .RegisterSecurity(iocConfiguration);
         }
 
         public static ContainerBuilder RegisterBase
@@ -71,11 +71,8 @@ namespace Bedrock.Template.Api.Infrastructure.Ioc.Autofac
         #endregion
 
         #region Private Methods
-        private static ContainerBuilder RegisterSecurity(this ContainerBuilder builder, IocConfiguration iocConfiguration, CoreConfiguration.BedrockConfiguration bedrockConfiguration)
+        private static ContainerBuilder RegisterSecurity(this ContainerBuilder builder, IocConfiguration iocConfiguration)
         {
-            if (!bedrockConfiguration.Security.IsEnabled)
-                return builder;
-
             return builder
                     .RegisterResourceAuthorizationManager(iocConfiguration)
                     .RegisterClaimCollectorFactory()
